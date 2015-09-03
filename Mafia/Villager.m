@@ -16,7 +16,7 @@
     if (self) {
         _isDead = NO;
         _villagerName = name;
-        _isMafiaOrSherriff = NO;
+        _isMafiaOrSheriff = NO;
     }
     return self;
 }

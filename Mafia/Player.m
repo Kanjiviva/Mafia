@@ -26,11 +26,11 @@
     return self;
 }
 
-- (BOOL)isMafia {
-    
-    
-    return self.isMafia;
-    
-}
+//- (BOOL)isMafia {
+//    
+//    
+//    return self.isMafia;
+//    
+//}
 
 @end

@@ -60,7 +60,11 @@
         self.currentLifeLabel.text = [NSString stringWithFormat:@"Player Current Life: %i", self.currentPlayer.currentLife];
         
         if (self.currentPlayer.currentLife == 0) {
-            UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Please click back button to restart a new game!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"Oops!"
+                                                               message:@"Please click back button to restart a new game!"
+                                                              delegate:nil
+                                                     cancelButtonTitle:@"OK"
+                                                     otherButtonTitles:nil];
             [alerView show];
             self.btnSubmitOutlet.hidden = YES;
         }
@@ -74,7 +78,8 @@
     if ([segue.identifier isEqualToString:@"submitAnswer"]) {
         VillagerChoiceViewController *vc = [segue destinationViewController];
         
-
+        vc.currentPlayer = self.currentPlayer;
+        
         [vc setVillagersWithArray:[self.villagers copy]];
     }
 }

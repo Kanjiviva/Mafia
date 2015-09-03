@@ -75,7 +75,7 @@
     }
     
     int randomVillager = arc4random_uniform(5);
-    ((Villager*)villagersArray[ randomVillager ]).isMafiaOrSherriff = YES;
+    ((Villager*)villagersArray[ randomVillager ]).isMafiaOrSheriff = YES;
     
     NSLog(@"Villager number %d is the Mafia/Sherriff (Index=%d)", randomVillager+1, randomVillager );
 
