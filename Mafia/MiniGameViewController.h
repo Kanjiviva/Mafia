@@ -12,5 +12,6 @@
 @interface MiniGameViewController : UIViewController
 
 @property (strong, nonatomic) Player *currentPlayer;
+@property (strong, nonatomic) NSArray *villagers;
 
 @end

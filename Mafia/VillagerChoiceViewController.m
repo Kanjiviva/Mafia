@@ -5,7 +5,6 @@
 //  Created by Steve on 2015-09-02.
 //  Copyright (c) 2015 Steve. All rights reserved.
 //
-
 #import "VillagerChoiceViewController.h"
 #import "Villager.h"
 
@@ -22,6 +21,8 @@
 - (IBAction)btn4:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btn5;
 - (IBAction)btn5:(id)sender;
+
+@property (strong, nonatomic) Villager* currentVillager;
 
 @end
 
@@ -51,17 +52,32 @@
     self.villagers = [array copy];
 }
 
+-(void)handleButtonForButtonIndex:(int)buttonIndex{
+    self.currentVillager = self.villagers[ buttonIndex ];
+    
+    if (self.currentVillager.isMafiaOrSherriff){
+        // Player wins
+        NSLog(@"Plaer wins!");
+    }else{
+        // Player keeps playing
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
+}
+
 - (IBAction)btn1:(id)sender {
-    
-    
-    
+    [self handleButtonForButtonIndex:0];
 }
 - (IBAction)btn2:(id)sender {
+    [self handleButtonForButtonIndex:1];
 }
 - (IBAction)btn3:(id)sender {
+    [self handleButtonForButtonIndex:2];
 }
 - (IBAction)btn4:(id)sender {
+    [self handleButtonForButtonIndex:3];
 }
 - (IBAction)btn5:(id)sender {
+    [self handleButtonForButtonIndex:4];
 }
 @end

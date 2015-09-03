@@ -74,9 +74,8 @@
     if ([segue.identifier isEqualToString:@"submitAnswer"]) {
         VillagerChoiceViewController *vc = [segue destinationViewController];
         
-        NSArray *storedArray = [self createVillagers];
-        
-        [vc setVillagersWithArray:[storedArray copy]];
+
+        [vc setVillagersWithArray:[self.villagers copy]];
     }
 }
 
@@ -88,17 +87,6 @@
     }
 }
 
-- (NSMutableArray *)createVillagers {
-    
-    NSMutableArray *villagersArray = [NSMutableArray new];
-    
-    for (int i = 0; i < 5; i++) {
-        Villager *villager = [[Villager alloc] initWithName:[NSString stringWithFormat:@"Villager %d", i + 1]];
-        
-        [villagersArray addObject:villager];
-    }
-    
-    return villagersArray;
-}
+
 
 @end

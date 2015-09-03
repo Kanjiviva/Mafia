@@ -14,9 +14,9 @@
 {
     self = [super init];
     if (self) {
-        
         _isDead = NO;
         _villagerName = name;
+        _isMafiaOrSherriff = NO;
     }
     return self;
 }

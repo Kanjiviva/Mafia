@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Player.h"
+#import "Villager.h"
 #import "MiniGameViewController.h"
 
 @interface ViewController ()
@@ -42,7 +43,9 @@
     if ([segue.identifier isEqualToString:@"isMafia"]) {
         Player *player = [[Player alloc] initWithName:self.playerNameTextField.text isMafia:YES];
         
-        ((MiniGameViewController *)segue.destinationViewController).currentPlayer = player;
+        MiniGameViewController * miniGameVC = segue.destinationViewController;
+        miniGameVC.currentPlayer = player;
+        miniGameVC.villagers = [self createVillagers];
         
         NSLog(@"%@", player.playerName);
         
@@ -59,4 +62,24 @@
     
     
 }
+
+
+- (NSMutableArray *)createVillagers {
+    
+    NSMutableArray *villagersArray = [NSMutableArray new];
+    
+    for (int i = 0; i < 5; i++) {
+        Villager *villager = [[Villager alloc] initWithName:[NSString stringWithFormat:@"Villager %d", i + 1]];
+        
+        [villagersArray addObject:villager];
+    }
+    
+    int randomVillager = arc4random_uniform(5);
+    ((Villager*)villagersArray[ randomVillager ]).isMafiaOrSherriff = YES;
+    
+    NSLog(@"Villager number %d is the Mafia/Sherriff (Index=%d)", randomVillager+1, randomVillager );
+
+    return villagersArray;
+}
+
 @end
