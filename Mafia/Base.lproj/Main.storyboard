@@ -22,7 +22,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="E8E-oB-G1e"/>
                                     <segue destination="f3e-6o-bWf" kind="show" identifier="isMafia" id="HHV-PW-mlx"/>
                                 </connections>
                             </button>
@@ -32,7 +31,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zOk-4R-iSB"/>
                                     <segue destination="f3e-6o-bWf" kind="show" identifier="isSheriff" id="N0o-HF-6Pv"/>
                                 </connections>
                             </button>
@@ -88,8 +86,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="submitBtn:" destination="f3e-6o-bWf" eventType="touchUpInside" id="xxv-m1-UWW"/>
-                                    <segue destination="rEb-hQ-o4R" kind="push" identifier="submitAnswer" id="3Ou-hC-4Tc"/>
+                                    <segue destination="rEb-hQ-o4R" kind="push" identifier="submitAnswer" id="bGp-fa-LJR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qX-7b-qVW">
@@ -103,6 +100,7 @@
                     </view>
                     <connections>
                         <outlet property="answerTextField" destination="6X1-H3-u4L" id="etJ-rp-Fe9"/>
+                        <outlet property="btnSubmitOutlet" destination="VAQ-dr-GS2" id="Fjb-1O-rZI"/>
                         <outlet property="currentLifeLabel" destination="8qX-7b-qVW" id="pD2-2L-eJ8"/>
                         <outlet property="currentPlayerName" destination="Php-D4-8tE" id="QtK-3d-aEU"/>
                         <outlet property="questionLabel" destination="NWQ-Rw-e6x" id="LqE-Wn-zHi"/>

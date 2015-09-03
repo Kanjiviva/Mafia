@@ -13,11 +13,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *answerTextField;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentLifeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *btnSubmitOutlet;
 
 @property (nonatomic) int xNumber;
 @property (nonatomic) int yNumber;
 
-- (IBAction)submitBtn:(id)sender;
 
 @end
 
@@ -53,8 +53,16 @@
     if ([self checkAnswerAndLife]) {
         return YES;
     } else {
+        
         self.currentPlayer.currentLife -= 1;
         self.currentLifeLabel.text = [NSString stringWithFormat:@"Player Current Life: %i", self.currentPlayer.currentLife];
+        
+        if (self.currentPlayer.currentLife == 0) {
+            UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Please click back button to restart a new game!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alerView show];
+            self.btnSubmitOutlet.hidden = YES;
+        }
+        
         return NO;
     }
 
@@ -63,13 +71,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"submitAnswer"]) {
         
-        
-        
-        
     }
-    
-    
-    
 }
 
 - (BOOL)checkAnswerAndLife {
@@ -80,7 +82,4 @@
     }
 }
 
-- (IBAction)submitBtn:(id)sender {
-    
-}
 @end
