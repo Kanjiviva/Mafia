@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8932EC1F-D001-4F3B-9F8D-A73E8C2834C9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Mafia</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E45CD749467B6E047D4633FC3AE973FB81D89FBE</key>
+		<string>https://github.com/Kanjiviva/Mafia.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Mafia.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E45CD749467B6E047D4633FC3AE973FB81D89FBE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Kanjiviva/Mafia.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E45CD749467B6E047D4633FC3AE973FB81D89FBE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E45CD749467B6E047D4633FC3AE973FB81D89FBE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Mafia</string>
+		</dict>
+	</array>
+</dict>
+</plist>
