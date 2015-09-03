@@ -13,7 +13,7 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *playerNameTextField;
-- (IBAction)buttonPressed:(id)sender;
+
 
 @end
 
@@ -26,9 +26,9 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated {
+    
+    self.playerNameTextField.text = @"";
 }
 
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
@@ -53,7 +53,9 @@
         
         Player *player = [[Player alloc] initWithName:self.playerNameTextField.text isMafia:NO];
         
-        ((MiniGameViewController *)segue.destinationViewController).currentPlayer = player;
+        MiniGameViewController * miniGameVC = segue.destinationViewController;
+        miniGameVC.currentPlayer = player;
+        miniGameVC.villagers = [self createVillagers];
         
         NSLog(@"%@", player.playerName);
         
