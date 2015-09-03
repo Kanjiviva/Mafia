@@ -10,4 +10,6 @@
 
 @interface VillagerChoiceViewController : UIViewController
 
+- (void)setVillagersWithArray:(NSMutableArray *)array;
+
 @end

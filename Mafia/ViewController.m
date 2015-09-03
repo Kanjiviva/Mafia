@@ -43,7 +43,6 @@
         Player *player = [[Player alloc] initWithName:self.playerNameTextField.text isMafia:YES];
         
         ((MiniGameViewController *)segue.destinationViewController).currentPlayer = player;
-         
         
         NSLog(@"%@", player.playerName);
         

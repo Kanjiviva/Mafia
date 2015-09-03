@@ -7,6 +7,8 @@
 //
 
 #import "MiniGameViewController.h"
+#import "Villager.h"
+#import "VillagerChoiceViewController.h"
 
 @interface MiniGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *currentPlayerName;
@@ -68,9 +70,13 @@
 
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"submitAnswer"]) {
+        VillagerChoiceViewController *vc = [segue destinationViewController];
         
+        NSArray *storedArray = [self createVillagers];
+        
+        [vc setVillagersWithArray:[storedArray copy]];
     }
 }
 
@@ -80,6 +86,19 @@
     } else {
         return NO;
     }
+}
+
+- (NSMutableArray *)createVillagers {
+    
+    NSMutableArray *villagersArray = [NSMutableArray new];
+    
+    for (int i = 0; i < 5; i++) {
+        Villager *villager = [[Villager alloc] initWithName:[NSString stringWithFormat:@"Villager %d", i + 1]];
+        
+        [villagersArray addObject:villager];
+    }
+    
+    return villagersArray;
 }
 
 @end

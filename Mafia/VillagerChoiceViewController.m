@@ -7,8 +7,21 @@
 //
 
 #import "VillagerChoiceViewController.h"
+#import "Villager.h"
 
 @interface VillagerChoiceViewController ()
+
+@property (strong, nonatomic) NSArray *villagers;
+@property (weak, nonatomic) IBOutlet UIButton *btn1;
+- (IBAction)btn1:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btn2;
+- (IBAction)btn2:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btn3;
+- (IBAction)btn3:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btn4;
+- (IBAction)btn4:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btn5;
+- (IBAction)btn5:(id)sender;
 
 @end
 
@@ -16,22 +29,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    NSArray *btns = @[self.btn1, self.btn2, self.btn3, self.btn4, self.btn5];
+    
+    for (int i = 0; i < [self.villagers count]; i++) {
+        Villager *villager = self.villagers[i];
+        
+        [((UIButton *)btns[i]) setTitle:villager.villagerName forState:UIControlStateNormal];
+        
+    }
+//    
+//    Villager *villager = self.villagers[0];
+//    
+//    self.btn1.titleLabel.text = villager.villagerName;
+    
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setVillagersWithArray:(NSMutableArray *)array {
+    self.villagers = [array copy];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)btn1:(id)sender {
+    
+    
+    
 }
-*/
-
+- (IBAction)btn2:(id)sender {
+}
+- (IBAction)btn3:(id)sender {
+}
+- (IBAction)btn4:(id)sender {
+}
+- (IBAction)btn5:(id)sender {
+}
 @end

@@ -10,4 +10,15 @@
 
 @implementation Villager
 
+- (instancetype)initWithName:(NSString *)name
+{
+    self = [super init];
+    if (self) {
+        
+        _isDead = NO;
+        _villagerName = name;
+    }
+    return self;
+}
+
 @end

@@ -10,4 +10,9 @@
 
 @interface Villager : NSObject
 
+@property (assign, nonatomic) BOOL isDead;
+@property (strong, nonatomic) NSString *villagerName;
+
+- (instancetype)initWithName:(NSString *)name;
+
 @end
